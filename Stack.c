@@ -20,7 +20,8 @@ void push(int data) {
     if (isFull()) {
         printf("Stack Overflow! Cannot push %d\n", data);
     } else {
-        stack[++top] = data; // top pointer increments and then the value gets updated on top with the data we add
+        top++;
+        stack[top] = data; // top pointer increments and then the value gets updated on top with the data we add
         printf("%d pushed to stack\n", data);  
     }
 }
@@ -31,7 +32,8 @@ int pop() { // we need to return the top most element, so we use int pop()
         printf("Stack Underflow! Cannot pop from an empty stack\n");
         return -1; // Return a default error value
     } else {
-        int data = stack[top--]; // removes the top element first, then it decrements to the next top element
+        int data = stack[top]; // removes the top element first, then it decrements to the next top element
+        top--;
         return data;
     }
 }
@@ -63,4 +65,5 @@ int main() {
 
     return 0; 
 }
+
 
