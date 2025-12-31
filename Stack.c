@@ -7,12 +7,12 @@ int top = -1; // Initialize top to -1 to indicate an empty stack
 
 // Function to check if the stack is empty
 int isEmpty() {
-    return top == -1;
+    return top == -1; // it is checking the condition top == -1, if true, it will return 1, if false, it will return 0
 }
 
 // Function to check if the stack is full
 int isFull() {
-    return top == MAX_SIZE - 1;
+    return top == MAX_SIZE - 1; // checking if top == MAX_SIZE - 1, if true, it will return 1, if false, it will return 0
 }
 
 // Function to add an element to the stack
@@ -20,18 +20,18 @@ void push(int data) {
     if (isFull()) {
         printf("Stack Overflow! Cannot push %d\n", data);
     } else {
-        stack[++top] = data;
+        stack[++top] = data; // top pointer increments and then the value gets updated on top with the data we add
         printf("%d pushed to stack\n", data);  
     }
 }
 
 // Function to remove an element from the stack
-int pop() {
+int pop() { // we need to return the top most element, so we use int pop()
     if (isEmpty()) {
         printf("Stack Underflow! Cannot pop from an empty stack\n");
         return -1; // Return a default error value
     } else {
-        int data = stack[top--];
+        int data = stack[top--]; // removes the top element first, then it decrements to the next top element
         return data;
     }
 }
@@ -61,5 +61,6 @@ int main() {
         printf("%d\n", pop());
     }
 
-    return 0;
+    return 0; 
 }
+
