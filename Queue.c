@@ -4,15 +4,9 @@
 #define MAX_SIZE 5 // Define the maximum size of the queue
 
 int queue_array[MAX_SIZE];
-int front = -1;
-int rear = -1;
+int front = -1; //outside the queue
+int rear = -1; //outside the queue
 
-// Function prototypes
-void enqueue(int item);
-int dequeue();
-void display();
-int isEmpty();
-int isFull();
 
 int main() {
     enqueue(10);
@@ -47,8 +41,8 @@ void enqueue(int item) {
     if (front == -1) {
         front = 0; // Set front to 0 for the first element
     }
-    rear++;
-    queue_array[rear] = item;
+    rear++; 
+    queue_array[rear] = item; 
     printf("Enqueued %d\n", item);
 }
 
@@ -80,3 +74,4 @@ void display() {
     }
     printf("\n");
 }
+
