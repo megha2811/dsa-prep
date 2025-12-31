@@ -49,11 +49,10 @@ void enqueue(int item) {
 // Remove an element from the queue
 int dequeue() {
     if (isEmpty()) {
-        printf("Queue Underflow\n");
         return -1; // Return -1 or handle error appropriately
     }
     int item = queue_array[front];
-    if (front == rear) {
+    if (front == 0 && rear == 0) {
         front = -1; // Reset queue if it becomes empty after dequeue
         rear = -1;
     } else {
@@ -74,4 +73,5 @@ void display() {
     }
     printf("\n");
 }
+
 
